@@ -1,0 +1,20 @@
+{
+  "type": "java",
+  "testFiles": [
+    {
+      "path": "src/test/java/LabTest.java",
+      "testCases": [
+        {
+          "methodName": "createSongTest",
+          "label": "Inserts a new song into DB",
+          "description": "Creates a Song via jdbc.createSong and verifies the songs table row count increases accordingly."
+        },
+        {
+          "methodName": "selectAllSongsTest",
+          "label": "Retrieves all songs from DB",
+          "description": "Queries DB manually to build expected list, then asserts jdbc.getAllSongs returns the same songs."
+        }
+      ]
+    }
+  ]
+}
