@@ -45,7 +45,7 @@ public class Lab {
              String sql = "INSERT INTO song(id, title, artist) VALUES(' "+ song.getId() + "', '" + song.getTitle() + "', ' " +song.getArtist() + " ')";
              Statement statement = connection.createStatement();
              statement.executeUpdate(sql);
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 // TODO: handle exception
                 e.printStackTrace();;
             }
