@@ -41,17 +41,12 @@ public class Lab {
 
     public void createSong(Song song)  {
     //write jdbc code here
-    //Song song1 = new Song();
+   
     boolean songCreated = false;
             try(Connection connection = ConnectionUtil.getConnection();) {
-                PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO song(id, title, artist) VALUES(?, ?, ?)");
-                preparedStatement.setInt(1, song.getId());
-                preparedStatement.setString(2, song.getTitle());
-                preparedStatement.setString(3, song.getArtist());
-                int rowsAffected = preparedStatement.executeUpdate();
-                if(rowsAffected > 0){
-                        songCreated = true;
-                }
+             String sql = "INSERT INTO song(id, title, artist) VALUES(' "+ song.getId() + "', '" + song.getTitle() + "', ' " +song.getArtist() + " ')";
+             Statement statement = connection.createStatement();
+             statement.executeUpdate(sql);
             } catch (Exception e) {
                 // TODO: handle exception
                 e.printStackTrace();;
