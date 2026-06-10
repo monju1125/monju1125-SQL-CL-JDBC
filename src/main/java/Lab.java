@@ -42,7 +42,7 @@ public class Lab {
     public void createSong(Song song)  {
     //write jdbc code here
             try(Connection connection = ConnectionUtil.getConnection();) {
-             String sql = "INSERT INTO song(id, title, artist) VALUES('" + song.getTitle() + "', ' " +song.getArtist() + " ')";
+             String sql = "INSERT INTO song(title, artist) VALUES('" + song.getTitle() + "', ' " +song.getArtist() + " ')";
              Statement statement = connection.createStatement();
              statement.executeUpdate(sql);
             } catch (SQLException e) {
