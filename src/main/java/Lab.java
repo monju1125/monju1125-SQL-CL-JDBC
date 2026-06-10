@@ -41,8 +41,6 @@ public class Lab {
 
     public void createSong(Song song)  {
     //write jdbc code here
-   
-    boolean songCreated = false;
             try(Connection connection = ConnectionUtil.getConnection();) {
              String sql = "INSERT INTO song(id, title, artist) VALUES(' "+ song.getId() + "', '" + song.getTitle() + "', ' " +song.getArtist() + " ')";
              Statement statement = connection.createStatement();
